@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -35,14 +37,39 @@ fun DefaultPreview() {
 @Composable
 fun previewContent() {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
+//        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .width(300.dp)
-            .fillMaxSize()
-//            .width(100.dp)
+            .background(Color.Green)
+            .fillMaxHeight(0.5f)
+            .fillMaxWidth()
+//            .width(600.dp)
+//            .requiredWidth(600.dp)
+//            .padding(top = 50.dp)
+            .border(5.dp, Color.Magenta)
+            .padding(5.dp)
+            .border(5.dp, Color.Blue)
+            .padding(5.dp)
+            .border(10.dp, Color.Red)
+            .padding(10.dp)
+
     ) {
-        funRow()
-        funColumn()
+        Text(
+            text = "Hello123456789",
+            modifier = Modifier
+//                .offset(0.dp, 20.dp)
+                .clickable {
+
+                }
+        )
+
+        Spacer(modifier = Modifier.height(50.dp))
+
+        Text(
+
+            modifier = Modifier
+                .background(color = Color.Red),
+            text = "World"
+        )
     }
 }
 

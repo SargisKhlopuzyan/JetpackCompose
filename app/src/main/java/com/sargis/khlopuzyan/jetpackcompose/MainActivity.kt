@@ -20,75 +20,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            val scaffoldState = rememberScaffoldState()
-            val scope = rememberCoroutineScope()
-
-            Scaffold(scaffoldState = scaffoldState) {
-
-//                var counter by remember {
-//                    mutableStateOf(0)
-//                }
-
-                var counter = produceState(initialValue = 0) {
-                    delay(3000L)
-                    value = 4
-                }
-
-                if (counter.value % 5 == 0 && counter.value > 0) {
-//                    scope.launch {
-//                        scaffoldState.snackbarHostState.showSnackbar("Hello")
-//                    }
-
-                    LaunchedEffect(key1 = scaffoldState.snackbarHostState) {
-                        scaffoldState.snackbarHostState.showSnackbar("Hello")
-                    }
-                }
-
-                Button(onClick = {
-
-                }) {
-                    Text(text = "Click me: ${counter.value}")
-                }
-            }
+            Greeting(name = "Sargis")
         }
+
     }
 }
-
-var i = 0
 
 @Composable
-fun MyComposable(backPressedDispatcher: OnBackPressedDispatcher) {
-
-    SideEffect {
-        i++
-    }
-
-    val callback = remember {
-        object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-
-            }
-        }
-    }
-
-    DisposableEffect(key1 = backPressedDispatcher) {
-        backPressedDispatcher.addCallback(callback)
-        onDispose {
-            callback.remove()
-        }
-    }
-
-    Button(onClick = {
-
-    }) {
-        Text(text = "Click me")
-    }
+fun Greeting(name: String) {
+    Text(text = "Hello $name")
 }
-
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     JetpackComposeTheme {
+        Greeting(name = "Sargis")
     }
 }

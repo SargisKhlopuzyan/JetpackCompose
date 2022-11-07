@@ -13,6 +13,13 @@
         android:theme="@style/MeditationUIYouTubeTheme"
         tools:targetApi="31">
         <activity
+            android:name=".part_22_multi_select_lazy_column.MultiSelectLazyColumnActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".part_21_multi_layer_parallax_scroll_effect.MultiLayerParallaxScrollEffectActivity"
             android:exported="false">
             <meta-data

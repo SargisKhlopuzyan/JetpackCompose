@@ -31,6 +31,7 @@ import com.example.jetpackcompose.part_18_navigation_for_beginners.NavigationAct
 import com.example.jetpackcompose.part_19_animated_splash_screen.AnimatedSplashScreenActivity
 import com.example.jetpackcompose.part_20_bottom_navigation_with_badges.BottomNavigationWithBadgesActivity
 import com.example.jetpackcompose.part_21_multi_layer_parallax_scroll_effect.MultiLayerParallaxScrollEffectActivity
+import com.example.jetpackcompose.part_22_multi_select_lazy_column.MultiSelectLazyColumnActivity
 import com.example.jetpackcompose.ui.theme.ButtonBlue
 import com.example.jetpackcompose.ui.theme.DeepBlue
 import com.example.jetpackcompose.ui.theme.MeditationUIYouTubeTheme
@@ -53,6 +54,7 @@ class MainActivity : ComponentActivity() {
             "Animated Splash Screen",
             "Bottom Navigation With Badges",
             "Multi Layer Parallax Scroll Effect",
+            "Multi Select LazyColumn",
         )
 
         setContent {
@@ -120,6 +122,12 @@ class MainActivity : ComponentActivity() {
                                             Intent(
                                                 this@MainActivity,
                                                 MultiLayerParallaxScrollEffectActivity::class.java
+                                            )
+                                        )
+                                        8 -> startActivity(
+                                            Intent(
+                                                this@MainActivity,
+                                                MultiSelectLazyColumnActivity::class.java
                                             )
                                         )
                                     }

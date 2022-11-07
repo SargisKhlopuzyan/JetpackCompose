@@ -16,6 +16,13 @@
         android:theme="@style/MeditationUIYouTubeTheme"
         tools:targetApi="31">
         <activity
+            android:name=".part_24_migrate_xml_compose.MigrateXMLComposeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".part_23_do_proper_permission_handling.DoProperPermissionHandlingActivity"
             android:exported="false">
             <meta-data

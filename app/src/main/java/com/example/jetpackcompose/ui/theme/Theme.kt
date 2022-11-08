@@ -5,6 +5,9 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import com.example.jetpackcompose.ui.part_24.LocalSpacing
+import com.example.jetpackcompose.ui.part_24.Spacing
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
@@ -139,4 +142,27 @@ fun MigrateXMLComposeTheme(
         shapes = Shapes,
         content = content
     )
+}
+
+@Composable
+fun CleanThemingInComposeTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    val colors = if (darkTheme) {
+        DarkColorPalette
+    } else {
+        LightColorPalette
+    }
+
+    // values =
+    CompositionLocalProvider(LocalSpacing provides Spacing()) {
+        MaterialTheme(
+            colors = colors,
+            typography = Typography,
+            shapes = Shapes,
+            content = content
+        )
+    }
+
 }

@@ -34,6 +34,7 @@ import com.example.jetpackcompose.part_21_multi_layer_parallax_scroll_effect.Mul
 import com.example.jetpackcompose.part_22_multi_select_lazy_column.MultiSelectLazyColumnActivity
 import com.example.jetpackcompose.part_23_do_proper_permission_handling.DoProperPermissionHandlingActivity
 import com.example.jetpackcompose.part_24_migrate_xml_compose.MigrateXMLComposeActivity
+import com.example.jetpackcompose.part_25_clean_hheming_in_compose.CleanThemingInComposeActivity
 import com.example.jetpackcompose.ui.theme.ButtonBlue
 import com.example.jetpackcompose.ui.theme.DeepBlue
 import com.example.jetpackcompose.ui.theme.MeditationUIYouTubeTheme
@@ -59,6 +60,7 @@ class MainActivity : ComponentActivity() {
             "Multi Select LazyColumn",
             "Do Proper Permission Handling",
             "Migrate XML Compose",
+            "Clean Theming In Compose",
         )
 
         setContent {
@@ -144,6 +146,12 @@ class MainActivity : ComponentActivity() {
                                             Intent(
                                                 this@MainActivity,
                                                 MigrateXMLComposeActivity::class.java
+                                            )
+                                        )
+                                        11 -> startActivity(
+                                            Intent(
+                                                this@MainActivity,
+                                                CleanThemingInComposeActivity::class.java
                                             )
                                         )
                                     }

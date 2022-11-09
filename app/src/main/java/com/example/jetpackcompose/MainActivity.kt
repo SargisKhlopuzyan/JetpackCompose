@@ -36,6 +36,7 @@ import com.example.jetpackcompose.part_23_do_proper_permission_handling.DoProper
 import com.example.jetpackcompose.part_24_migrate_xml_compose.MigrateXMLComposeActivity
 import com.example.jetpackcompose.part_25_clean_hheming_in_compose.CleanThemingInComposeActivity
 import com.example.jetpackcompose.part_26_compose_navigation_just_got_so_much_easier.ComposeNavigationJustGotSoMuchEasierActivity
+import com.example.jetpackcompose.part_27_support_all_screen_sizes.SupportAllScreenSizesActivity
 import com.example.jetpackcompose.ui.theme.ButtonBlue
 import com.example.jetpackcompose.ui.theme.DeepBlue
 import com.example.jetpackcompose.ui.theme.MeditationUIYouTubeTheme
@@ -63,6 +64,7 @@ class MainActivity : ComponentActivity() {
             "Migrate XML Compose",
             "Clean Theming In Compose",
             "Compose Navigation Just Got So Much Easier",
+            "Support All Screen Sizes",
         )
 
         setContent {
@@ -160,6 +162,12 @@ class MainActivity : ComponentActivity() {
                                             Intent(
                                                 this@MainActivity,
                                                 ComposeNavigationJustGotSoMuchEasierActivity::class.java
+                                            )
+                                        )
+                                        13 -> startActivity(
+                                            Intent(
+                                                this@MainActivity,
+                                                SupportAllScreenSizesActivity::class.java
                                             )
                                         )
                                     }
